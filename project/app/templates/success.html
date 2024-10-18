@@ -1,0 +1,69 @@
+<style>
+/* Basic Button Styling */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    background-color: #4CAF50; /* Green background */
+    border: none;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px #999; /* Add shadow */
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+/* Button Hover Effect */
+.button:hover {
+    background-color: #45a049; /* Darker green */
+    box-shadow: 0 6px #666;
+}
+
+/* Button Active (Pressed) State */
+.button:active {
+    background-color: #3e8e41; /* Even darker green */
+    box-shadow: 0 2px #666;
+    transform: translateY(2px); /* Slightly move the button down */
+}
+
+/* Disabled Button */
+.button:disabled {
+    background-color: grey;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+{% if status %}
+        <div class="container" style="text-align: center;">
+            <i class="fa fa-check-circle" aria-hidden="true" style="font-size: 80px; color: green;"></i>
+        </div>
+        <h2 style="text-align: center;"><img src="https://developer.paddle.com/assets/images/checkout-overlay-success-20230313.png" alt=""></h2>
+    {% else %}
+        <h2 style="text-align: center;">Your Payment is failed! Try again.</h2>
+{% endif %}
+
+    <div class="text-center mt-5">
+        <a href="{% url 'Product' %}" class="btn btn-primary" role="button"><button class="button">Buy another one</button></a>
+    </div>
